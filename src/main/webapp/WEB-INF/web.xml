@@ -23,11 +23,24 @@
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
 
+
+    <!-- Filter Example 1 -->
+    <filter>
+        <filter-name>helloWorld</filter-name>
+        <filter-class>com.cellebrite.security.WorldFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>helloWorld</filter-name>
+        <!--<url-pattern>/filter.jsp</url-pattern>-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- end Filter Example 1 -->
+
+
     <filter>
         <filter-name>ShiroFilter</filter-name>
         <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
     </filter>
-
     <filter-mapping>
         <filter-name>ShiroFilter</filter-name>
         <url-pattern>/*</url-pattern>
